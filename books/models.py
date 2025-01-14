@@ -1,0 +1,35 @@
+from django.db import models
+
+
+class AuthorModel(models.Model):
+    name = models.CharField(max_length=35)  # string (Varchar va Char)
+    surname = models.CharField(max_length=35)
+    pseudo_name = models.CharField(max_length=100, null=True, blank=True)
+    age = models.PositiveIntegerField()
+
+    def __str__(self):
+        return f'{self.name} {self.surname}'
+
+    class Meta:
+        verbose_name = 'Author'
+        verbose_name_plural = 'Authors'
+
+
+class BookModel(models.Model):
+    title = models.CharField(max_length=255)
+    author = models.ForeignKey(
+        AuthorModel,
+        on_delete=models.CASCADE,
+        related_name='books'
+    )
+    short_description = models.CharField(max_length=255)
+    long_description = models.TextField()
+    price = models.PositiveIntegerField()
+    image = models.ImageField(upload_to='books/')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Book'
+        verbose_name_plural = 'Books'
