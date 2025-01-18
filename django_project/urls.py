@@ -6,18 +6,6 @@ from django_project import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('books.urls', namespace='books'))
+    path('', include('django_exsam.urls', namespace='django_exsam'))
 ]
 
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-
-from django.urls import path
-from . import views
-
-urlpatterns = [
-    path('email/', views.email, name='email'),
-    path('phone_number/', views.phone_number, name='phone_number'),
-    path('hobby/', views.hobby, name='hobby'),
-]
