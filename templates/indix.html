@@ -1,167 +1,190 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
-}
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Library</title>-->
+<!--    <link rel="stylesheet" href="{% static 'css/style.css' %}">-->
+<!--    <style>-->
+<!--        body {-->
+<!--    font-family: Arial, sans-serif;-->
+<!--    margin: 0;-->
+<!--    padding: 0;-->
+<!--    background-color: #f4f4f9;-->
+<!--    color: #333;-->
+<!--}-->
 
-.header {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-}
+<!--.header {-->
+<!--    background-color: #4CAF50;-->
+<!--    color: white;-->
+<!--    text-align: center;-->
+<!--    padding: 1rem 0;-->
+<!--}-->
 
-.book-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 2rem;
-}
+<!--.book-container {-->
+<!--    display: flex;-->
+<!--    justify-content: center;-->
+<!--    flex-wrap: wrap;-->
+<!--    margin: 2rem;-->
+<!--}-->
 
-.book {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin: 1rem;
-    padding: 1rem;
-    width: 300px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: start;
-}
+<!--.book {-->
+<!--    background-color: white;-->
+<!--    border: 1px solid #ddd;-->
+<!--    border-radius: 8px;-->
+<!--    margin: 1rem;-->
+<!--    padding: 1rem;-->
+<!--    width: 300px;-->
+<!--    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);-->
+<!--    text-align: start;-->
+<!--}-->
 
-.book-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-}
+<!--.book-image {-->
+<!--    max-width: 100%;-->
+<!--    height: auto;-->
+<!--    border-radius: 4px;-->
+<!--}-->
 
-.book-title {
-    font-size: 1.5rem;
-    margin: 0.5rem 0;
-}
+<!--.book-title {-->
+<!--    font-size: 1.5rem;-->
+<!--    margin: 0.5rem 0;-->
+<!--}-->
 
-.book-author,
-.book-price,
-.book-description {
-    margin: 0.5rem 0;
-    font-size: 1rem;
-}
+<!--.book-author,-->
+<!--.book-price,-->
+<!--.book-description {-->
+<!--    margin: 0.5rem 0;-->
+<!--    font-size: 1rem;-->
+<!--}-->
 
-.footer {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
+<!--.footer {-->
+<!--    background-color: #4CAF50;-->
+<!--    color: white;-->
+<!--    text-align: center;-->
+<!--    padding: 1rem 0;-->
+<!--    position: relative;-->
+<!--    bottom: 0;-->
+<!--    width: 100%;-->
+<!--}-->
 
 
-.detail-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+<!--.detail-container {-->
+<!--    display: flex;-->
+<!--    justify-content: center;-->
+<!--    align-items: center;-->
+<!--    margin: 2rem;-->
+<!--    padding: 2rem;-->
+<!--    background-color: white;-->
+<!--    border-radius: 8px;-->
+<!--    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);-->
+<!--}-->
 
-.detail {
-    text-align: center;
-    max-width: 600px;
-}
+<!--.detail {-->
+<!--    text-align: center;-->
+<!--    max-width: 600px;-->
+<!--}-->
 
-.detail-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-}
+<!--.detail-image {-->
+<!--    max-width: 100%;-->
+<!--    height: auto;-->
+<!--    border-radius: 4px;-->
+<!--    margin-bottom: 1rem;-->
+<!--}-->
 
-.detail-title {
-    font-size: 2rem;
-    margin: 0.5rem 0;
-}
+<!--.detail-title {-->
+<!--    font-size: 2rem;-->
+<!--    margin: 0.5rem 0;-->
+<!--}-->
 
-.detail-author,
-.detail-price,
-.detail-description {
-    margin: 0.5rem 0;
-    font-size: 1.2rem;
-}
+<!--.detail-author,-->
+<!--.detail-price,-->
+<!--.detail-description {-->
+<!--    margin: 0.5rem 0;-->
+<!--    font-size: 1.2rem;-->
+<!--}-->
 
-.back-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-top: 1rem;
-}
+<!--.back-button {-->
+<!--    background-color: #4CAF50;-->
+<!--    color: white;-->
+<!--    border: none;-->
+<!--    border-radius: 4px;-->
+<!--    padding: 0.5rem 1rem;-->
+<!--    font-size: 1rem;-->
+<!--    cursor: pointer;-->
+<!--    margin-top: 1rem;-->
+<!--}-->
 
-.back-button:hover {
-    background-color: #45a049;
-}
+<!--.back-button:hover {-->
+<!--    background-color: #45a049;-->
+<!--}-->
 
-.footer {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
+<!--.footer {-->
+<!--    background-color: #4CAF50;-->
+<!--    color: white;-->
+<!--    text-align: center;-->
+<!--    padding: 1rem 0;-->
+<!--    position: relative;-->
+<!--    bottom: 0;-->
+<!--    width: 100%;-->
+<!--}-->
 
-    </style>
-</head>
-<body>
-<header class="header">|
-    <h1>Welcome to Our Libary</h1>
-</header>
-<main class="book-container">
-    <div class="book">
-        <img src="{% static 'img/img.png' %}" alt="Book 1" class="book-image">
-        <h2 class="book-title">Book Title 1</h2>
-        <p class="book-author">Author: John Doe</p>
-        <p class="book-price">Price: $20</p>
-        <p class="book-description">This is a fascinating book about...</p>
-        <button><a href="{% url 'books:detail' %}">details</a></button>
-    </div>
-    <div class="book">
-        <img src="{% static 'img/img_1.png' %}" alt="Book 2" class="book-image">
-        <h2 class="book-title">Book Title 2</h2>
-        <p class="book-author">Author: Jane Smith</p>
-        <p class="book-price">Price: $15</p>
-        <p class="book-description">Dive into the world of...</p>
-        <button><a href="{% url 'books:detail' %}">details</a></button>
-    </div>
-    <div class="book">
-        <img src="{% static 'img/img_2.png' %}" alt="Book 3" class="book-image">
-        <h2 class="book-title">Book Title 3</h2>
-        <p class="book-author">Author: Mark Twain</p>
-        <p class="book-price">Price: $25</p>
-        <p class="book-description">An intriguing journey through...</p>
-        <button><a href="{% url 'books:detail' %}">details</a></button>
-    </div>
-</main>
-<footer class="footer">
-    <p>&copy; 2024 Library. All rights reserved.</p>
-</footer>
-</body>
-</html>
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<header class="header">|-->
+<!--    <h1>Welcome to Our Libary</h1>-->
+<!--</header>-->
+<!--<main class="book-container">-->
+<!--    <div class="book">-->
+<!--        <img src="{% static 'img/img.png' %}" alt="Book 1" class="book-image">-->
+<!--        <h2 class="book-title">Book Title 1</h2>-->
+<!--        <p class="book-author">Author: John Doe</p>-->
+<!--        <p class="book-price">Price: $20</p>-->
+<!--        <p class="book-description">This is a fascinating book about...</p>-->
+<!--        <button><a href="{% url 'books:detail' %}">details</a></button>-->
+<!--    </div>-->
+<!--    <div class="book">-->
+<!--        <img src="{% static 'img/img_1.png' %}" alt="Book 2" class="book-image">-->
+<!--        <h2 class="book-title">Book Title 2</h2>-->
+<!--        <p class="book-author">Author: Jane Smith</p>-->
+<!--        <p class="book-price">Price: $15</p>-->
+<!--        <p class="book-description">Dive into the world of...</p>-->
+<!--        <button><a href="{% url 'books:detail' %}">details</a></button>-->
+<!--    </div>-->
+<!--    <div class="book">-->
+<!--        <img src="{% static 'img/img_2.png' %}" alt="Book 3" class="book-image">-->
+<!--        <h2 class="book-title">Book Title 3</h2>-->
+<!--        <p class="book-author">Author: Mark Twain</p>-->
+<!--        <p class="book-price">Price: $25</p>-->
+<!--        <p class="book-description">An intriguing journey through...</p>-->
+<!--        <button><a href="{% url 'books:detail' %}">details</a></button>-->
+<!--    </div>-->
+<!--</main>-->
+<!--<footer class="footer">-->
+<!--    <p>&copy; 2024 Library. All rights reserved.</p>-->
+<!--</footer>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+users = {}
+
+def register(username, password):
+    if username in users:
+        return "Bu foydalanuvchi allaqachon mavjud!"
+    users[username] = password
+    return "Ro‘yxatdan o‘tish muvaffaqiyatli!"
+
+def login(username, password):
+    if users.get(username) == password:
+        return "Tizimga muvaffaqiyatli kirdingiz!"
+    return "Login yoki parol noto‘g‘ri!"
+
+def logout():
+    return "Tizimdan chiqdingiz!"
+
+# Misol:
+print(register("user1", "1234"))
+print(login("user1", "1234"))
+print(logout())
